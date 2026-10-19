@@ -1,0 +1,168 @@
+[
+  {
+    "path": "/",
+    "file": "index.html",
+    "type": "home",
+    "title": "Clinic Marketing Systems | More Booked Appointments",
+    "description": "Websites, local SEO, Google Ads and booking tracking for clinics in Ireland. More booked appointments, and proof of where each one came from."
+  },
+  {
+    "path": "/services/",
+    "file": "services.html",
+    "type": "page",
+    "title": "Clinic Marketing Services | Clinic Marketing Systems",
+    "description": "The four parts of a clinic marketing system: a fast website, local SEO, Google Ads with real tracking, and booking tracking tied to your booking software.",
+    "crumbs": [],
+    "crumbName": "Services"
+  },
+  {
+    "path": "/services/clinic-websites/",
+    "file": "services/clinic-websites.html",
+    "type": "service",
+    "title": "Clinic Websites Built to Rank and Book | CMS",
+    "description": "Fast clinic websites built around your booking software, with clear service pages, mobile-first booking and tracking set up from day one.",
+    "crumbs": [["Services", "/services/"]],
+    "crumbName": "Clinic websites",
+    "service": { "name": "Clinic website design and build", "serviceType": "Website design for healthcare clinics" }
+  },
+  {
+    "path": "/services/local-seo/",
+    "file": "services/local-seo.html",
+    "type": "service",
+    "title": "Local SEO and Google Business Profile for Clinics",
+    "description": "Local SEO for clinics in Ireland: Google Business Profile, location and service pages, reviews and citations, so patients nearby find you first.",
+    "crumbs": [["Services", "/services/"]],
+    "crumbName": "Local SEO",
+    "service": { "name": "Local SEO and Google Business Profile management", "serviceType": "Local search engine optimisation for clinics" }
+  },
+  {
+    "path": "/services/google-ads/",
+    "file": "services/google-ads.html",
+    "type": "service",
+    "title": "Google Ads for Clinics with Real Booking Tracking",
+    "description": "Google Ads for physio, chiro, dental and other clinics, measured on booked appointments rather than clicks. Managed from Ireland by a 10+ year specialist.",
+    "crumbs": [["Services", "/services/"]],
+    "crumbName": "Google Ads",
+    "service": { "name": "Google Ads management for clinics", "serviceType": "Pay-per-click advertising management" }
+  },
+  {
+    "path": "/services/booking-tracking/",
+    "file": "services/booking-tracking.html",
+    "type": "service",
+    "title": "Booking Tracking for Clinics: Cliniko, Jane and More",
+    "description": "Tie your marketing to real bookings in Cliniko, Jane and other clinic software, so you see which channels fill the diary, not just which ones get clicks.",
+    "crumbs": [["Services", "/services/"]],
+    "crumbName": "Booking tracking",
+    "service": { "name": "Clinic booking and conversion tracking", "serviceType": "Marketing analytics and conversion tracking" }
+  },
+  {
+    "path": "/services/patient-guides/",
+    "file": "services/patient-guides.html",
+    "type": "service",
+    "title": "Patient Guide Library for Clinic Websites | CMS",
+    "description": "We write and publish open, indexable condition guides on your clinic website, reviewed by your clinicians, so patients find you and trust you first.",
+    "crumbs": [["Services", "/services/"]],
+    "crumbName": "Patient guide library",
+    "service": { "name": "Patient guide library", "serviceType": "Healthcare content writing and publishing" }
+  },
+  {
+    "path": "/who-we-help/",
+    "file": "who-we-help.html",
+    "type": "page",
+    "title": "Who We Help: Physio, Chiro, Dental and More Clinics",
+    "description": "Marketing systems for physiotherapists, chiropractors, osteopaths, dentists, aesthetics clinics and addiction treatment centres in Ireland.",
+    "crumbs": [],
+    "crumbName": "Who we help"
+  },
+  {
+    "path": "/clinic-check/",
+    "file": "clinic-check.html",
+    "type": "page",
+    "title": "Free Clinic Website and Booking Check",
+    "description": "Send us your clinic website and we will check speed, mobile booking, Google Business Profile and tracking, then send a plain-English list of fixes.",
+    "crumbs": [],
+    "crumbName": "Free clinic check"
+  },
+  {
+    "path": "/resources/",
+    "file": "resources.html",
+    "type": "page",
+    "title": "Clinic Marketing Resources and Guides",
+    "description": "Practical guides for clinic owners on booking tracking, Google Business Profile, Google Ads and publishing patient guides that rank.",
+    "crumbs": [],
+    "crumbName": "Resources"
+  },
+  {
+    "path": "/resources/track-google-ads-bookings-cliniko/",
+    "file": "resources/track-google-ads-bookings-cliniko.html",
+    "type": "article",
+    "title": "How to Track Bookings from Google Ads in Cliniko",
+    "description": "A step-by-step guide to counting real Cliniko bookings as Google Ads conversions, using Google Tag Manager, GA4 and the right booking setup.",
+    "crumbs": [["Resources", "/resources/"]],
+    "crumbName": "Track Google Ads bookings in Cliniko",
+    "article": { "headline": "How to track bookings from Google Ads in Cliniko" }
+  },
+  {
+    "path": "/resources/patient-leaflets-should-be-blog-posts/",
+    "file": "resources/patient-leaflets-should-be-blog-posts.html",
+    "type": "article",
+    "title": "Why Patient Leaflets Should Be Blog Posts",
+    "description": "Gated PDF leaflets hide your best clinical knowledge from Google and patients. Here is why open patient guides on your own site work harder.",
+    "crumbs": [["Resources", "/resources/"]],
+    "crumbName": "Patient leaflets as blog posts",
+    "article": { "headline": "Why patient leaflets should be blog posts" }
+  },
+  {
+    "path": "/resources/google-business-profile-checklist-physio/",
+    "file": "resources/google-business-profile-checklist-physio.html",
+    "type": "article",
+    "title": "Google Business Profile Checklist for Physio Clinics",
+    "description": "A practical Google Business Profile checklist for physiotherapy clinics: categories, services, booking links, photos, reviews and multi-location setup.",
+    "crumbs": [["Resources", "/resources/"]],
+    "crumbName": "GBP checklist for physio clinics",
+    "article": { "headline": "Google Business Profile checklist for physio clinics" }
+  },
+  {
+    "path": "/about/",
+    "file": "about.html",
+    "type": "page",
+    "title": "About Clinic Marketing Systems",
+    "description": "Clinic Marketing Systems is run by Aidan Lehane of PayPerClick.ie, with over 10 years of Google Ads and local SEO work for Irish businesses.",
+    "crumbs": [],
+    "crumbName": "About"
+  },
+  {
+    "path": "/contact/",
+    "file": "contact.html",
+    "type": "page",
+    "title": "Contact Clinic Marketing Systems",
+    "description": "Get in touch about your clinic website, local SEO, Google Ads or booking tracking. Send a message or book a call.",
+    "crumbs": [],
+    "crumbName": "Contact"
+  },
+  {
+    "path": "/privacy/",
+    "file": "privacy.html",
+    "type": "page",
+    "title": "Privacy Notice | Clinic Marketing Systems",
+    "description": "How Clinic Marketing Systems collects, uses and stores the details you send through this website, and your rights under GDPR.",
+    "crumbs": [],
+    "crumbName": "Privacy"
+  },
+  {
+    "path": "/thanks/",
+    "file": "thanks.html",
+    "type": "page",
+    "noindex": true,
+    "title": "Thanks, We Have Your Details",
+    "description": "Thanks for getting in touch with Clinic Marketing Systems. We will reply by email."
+  },
+  {
+    "path": "/404/",
+    "file": "404.html",
+    "type": "page",
+    "noindex": true,
+    "title": "Page Not Found | Clinic Marketing Systems",
+    "description": "The page you were looking for is not here. Try the services, resources or contact pages."
+  }
+]

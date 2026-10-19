@@ -1,0 +1,52 @@
+<form class="lead-form" method="post" action="/api/submit" data-lead-form>
+  <input type="hidden" name="form-name" value="{{FORM_NAME}}">
+  <div class="hp" aria-hidden="true">
+    <label for="{{FORM_NAME}}-hp">Leave this field empty</label>
+    <input id="{{FORM_NAME}}-hp" type="text" name="company-website" tabindex="-1" autocomplete="off">
+  </div>
+  <div class="field-row">
+    <div class="field">
+      <label for="{{FORM_NAME}}-name">Your name <span class="req" aria-hidden="true">*</span></label>
+      <input id="{{FORM_NAME}}-name" type="text" name="name" autocomplete="name" required>
+    </div>
+    <div class="field">
+      <label for="{{FORM_NAME}}-clinic">Clinic name <span class="req" aria-hidden="true">*</span></label>
+      <input id="{{FORM_NAME}}-clinic" type="text" name="clinic" autocomplete="organization" required>
+    </div>
+  </div>
+  <div class="field-row">
+    <div class="field">
+      <label for="{{FORM_NAME}}-email">Email <span class="req" aria-hidden="true">*</span></label>
+      <input id="{{FORM_NAME}}-email" type="email" name="email" autocomplete="email" required>
+    </div>
+    <div class="field">
+      <label for="{{FORM_NAME}}-phone">Phone</label>
+      <input id="{{FORM_NAME}}-phone" type="tel" name="phone" autocomplete="tel">
+    </div>
+  </div>
+  <div class="field-row">
+    <div class="field">
+      <label for="{{FORM_NAME}}-website">Clinic website</label>
+      <input id="{{FORM_NAME}}-website" type="text" name="website" inputmode="url" placeholder="yourclinic.ie" autocomplete="url">
+    </div>
+    <div class="field">
+      <label for="{{FORM_NAME}}-type">Clinic type</label>
+      <select id="{{FORM_NAME}}-type" name="clinic_type">
+        <option value="">Choose one</option>
+        <option>Physiotherapy</option>
+        <option>Chiropractic</option>
+        <option>Osteopathy</option>
+        <option>Dental</option>
+        <option>Aesthetics or med spa</option>
+        <option>Addiction treatment</option>
+        <option>Other clinic</option>
+      </select>
+    </div>
+  </div>
+  <div class="field">
+    <label for="{{FORM_NAME}}-message">Anything we should know?</label>
+    <textarea id="{{FORM_NAME}}-message" name="message" rows="4" placeholder="Booking software you use, locations, what is not working right now"></textarea>
+  </div>
+  <button class="btn btn-primary btn-block" type="submit">Send</button>
+  <p class="form-note">We use these details only to reply to you. See our <a href="/privacy/">privacy notice</a>.</p>
+</form>

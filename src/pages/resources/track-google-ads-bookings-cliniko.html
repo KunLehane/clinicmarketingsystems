@@ -1,0 +1,99 @@
+<article>
+  <header class="article-head">
+    <div class="container narrow">
+      <p class="eyebrow">Tracking</p>
+      <h1>How to track bookings from Google Ads in Cliniko</h1>
+      <p class="lead">If your Google Ads account counts clicks or button presses as conversions, it is optimising for the wrong thing. Here is how to make a completed Cliniko booking the conversion that counts.</p>
+      <div class="article-meta"><span>By Aidan Lehane</span><span>19 October 2026</span><span>5 min read</span></div>
+    </div>
+  </header>
+  <div class="container narrow">
+    <div class="article-cover">{{thumb:tracking}}</div>
+    <div class="prose">
+      <h2>Why the booking is the conversion that matters</h2>
+      <p>Google Ads learns from the conversions you report. If you tell it a conversion is someone clicking "Book now", it will find you more people who click "Book now", including the many who never finish booking. If you tell it a conversion is a confirmed appointment, it learns what a patient who books looks like.</p>
+      <p>Cliniko supports this through Google Tag Manager. The idea is simple: when a patient completes a booking, Cliniko shows a confirmation page, and you fire your Google Ads conversion tag on that page.</p>
+
+      <h2>What you need before you start</h2>
+      <ul>
+        <li>A Google Ads account with an active campaign.</li>
+        <li>A Google Tag Manager (GTM) container, ideally the same one used on your website.</li>
+        <li>A Google Analytics 4 property, linked to Google Ads. Optional for the conversion itself, but very useful for reporting.</li>
+        <li>Cliniko online bookings switched on, with your GTM container ID added to your Cliniko account. Cliniko's help centre shows where this setting lives.</li>
+      </ul>
+
+      <h2>Step 1: Decide between hosted and embedded bookings</h2>
+      <p>Cliniko bookings can run on Cliniko's own hosted booking page, or be embedded inside your website in an iframe. This choice matters more than any tag setting.</p>
+      <p>Embedded bookings look neat, but iframes do not pass referral information through, and Google Analytics cross-domain tracking does not work inside them. The result is that bookings often show up as "Direct" or as coming from your own website, and the link back to the ad is lost. Cliniko's own guidance is that if accurate conversion tracking is essential, you should send patients to the hosted booking page.</p>
+      <div class="callout"><p><strong>Our recommendation:</strong> point your "Book now" buttons at the Cliniko hosted booking page and set up cross-domain tracking (Step 5). It is the most reliable setup for most clinics.</p></div>
+
+      <h2>Step 2: Create the conversion action in Google Ads</h2>
+      <p>In Google Ads, go to Goals, then Conversions, and create a new website conversion action set up manually. Sensible settings for a clinic:</p>
+      <ul>
+        <li><strong>Category:</strong> Book appointment.</li>
+        <li><strong>Count:</strong> One. A patient who books twice in a session should not count as two separate ad wins.</li>
+        <li><strong>Value:</strong> optional. If you know the typical value of a new patient, you can use it; if not, leave it out rather than guess.</li>
+      </ul>
+      <p>When you save it, Google gives you a Conversion ID and a Conversion Label. You need both for the next step.</p>
+
+      <h2>Step 3: Add the tags in Google Tag Manager</h2>
+      <p>In GTM, create:</p>
+      <ol>
+        <li><strong>A Conversion Linker tag</strong>, firing on all pages. This stores the ad click information so the conversion can be matched back to the ad.</li>
+        <li><strong>A Google Ads Conversion Tracking tag</strong>, using the Conversion ID and Label from Step 2.</li>
+        <li><strong>A trigger for that tag:</strong> a Page View trigger set to "Some Page Views", where Page Path contains <code>bookings/confirmation</code>. That is the page Cliniko shows once a booking is complete.</li>
+      </ol>
+
+      <h2>Step 4: Send the booking to GA4 as well</h2>
+      <p>Add a GA4 Event tag on the same confirmation trigger. Cliniko's guide uses the event name "purchase"; a clearer custom name such as <code>booking_completed</code> also works. In GA4, mark that event as a key event. You can then see bookings by channel, campaign and landing page, including the ones that did not come from ads.</p>
+
+      <h2>Step 5: Keep the ad click across domains</h2>
+      <p>Your website is on your domain and the hosted booking page is on Cliniko's. Without extra setup, the ad click information stays behind on your site. Two settings fix this:</p>
+      <ul>
+        <li>In the Conversion Linker tag on your website, enable linking across domains and add your Cliniko booking domain.</li>
+        <li>In GA4, under your data stream settings, configure your domains so both your site and the Cliniko booking domain are included.</li>
+      </ul>
+
+      <h2>Step 6: Test with a real booking</h2>
+      <ol>
+        <li>Open GTM Preview mode on your website.</li>
+        <li>Click through to the booking page and complete a test booking.</li>
+        <li>Check the conversion tag fired on the confirmation page, and that the GA4 event appears in GA4's DebugView.</li>
+        <li>Cancel the test booking in Cliniko so it does not end up in your diary.</li>
+      </ol>
+      <p>Google Ads can take a few hours to show a conversion action as recording, so check its status the next day too.</p>
+
+      <h2>If you have to embed the booking page</h2>
+      <p>Cliniko documents a workaround for embedded bookings: the embedded page sends a message to your website when the confirmation page is reached, your site listens for it and pushes a <code>clinikoBookingCompleted</code> event to the GTM data layer, and your tags fire from that event on your own domain. It works, but it needs a developer comfortable with JavaScript and GTM, and Cliniko does not provide support for it.</p>
+
+      <h2>Common mistakes</h2>
+      <ul>
+        <li><strong>Counting the button click.</strong> It inflates conversions and trains Google on the wrong behaviour.</li>
+        <li><strong>Leaving old conversion actions as primary.</strong> If a "contact page view" goal is still set as primary, bidding will keep using it.</li>
+        <li><strong>Forgetting phone bookings.</strong> Many patients still call. Use call tracking, and record a referral source on new patients in Cliniko where you can.</li>
+        <li><strong>Sending patient data.</strong> Never pass names, emails or appointment details into tags. Tracking only needs to know that a booking happened.</li>
+        <li><strong>Never retesting.</strong> If the booking flow changes, the confirmation path can change with it. Run a test booking every few months.</li>
+      </ul>
+
+      <h2>The result</h2>
+      <p>Once this is in place, your Google Ads reports show booked appointments and cost per booking rather than clicks, and automated bidding has the right signal to learn from. That is the basis for every sensible decision about your ad budget.</p>
+      <p>Not sure whether your current setup is counting bookings? Our <a href="/clinic-check/">free clinic website check</a> includes a look at your tracking.</p>
+    </div>
+    <footer class="article-foot">
+      <div class="author"><span class="author-mark" aria-hidden="true">AL</span><span>Written by Aidan Lehane, who has run Google Ads and local SEO for Irish businesses for over 10 years. <a href="/about/">About us</a>.</span></div>
+    </footer>
+  </div>
+</article>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head"><h2>Related</h2></div>
+    <div class="grid grid-3">
+      <div class="card card-link"><h3><a href="/services/booking-tracking/">Booking tracking service</a></h3><p>We set this up and test it for you, for Cliniko, Jane and other systems.</p></div>
+      <div class="card card-link"><h3><a href="/services/google-ads/">Google Ads for clinics</a></h3><p>Campaigns measured on booked appointments.</p></div>
+      <div class="card card-link"><h3><a href="/resources/google-business-profile-checklist-physio/">GBP checklist for physio clinics</a></h3><p>Get your Google Business Profile right, location by location.</p></div>
+    </div>
+  </div>
+</section>
+
+{{CTA}}
