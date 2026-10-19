@@ -12,7 +12,7 @@ const ctaBand = await fs.readFile('src/partials/cta.html', 'utf8');
 
 const esc = s => String(s).replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
 const ORG_ID = `${SITE_URL}/#organization`;
-const FONTS = 'https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Instrument+Sans:wght@400;500;600&display=swap';
+const FONTS = 'https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;500;600&display=swap';
 
 const thumbs = {};
 for (const f of await fs.readdir('src/partials/thumbs')) thumbs[f.replace('.svg', '')] = (await fs.readFile(path.join('src/partials/thumbs', f), 'utf8')).trim();
@@ -103,7 +103,7 @@ ${robots}<meta property="og:type" content="${p.article ? 'article' : 'website'}"
 <meta property="og:title" content="${esc(p.title)}">
 <meta property="og:description" content="${esc(p.description)}">
 <meta property="og:url" content="${url}">
-<meta name="theme-color" content="#0d3236">
+<meta name="theme-color" content="#0b5d4b">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

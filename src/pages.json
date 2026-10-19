@@ -40,7 +40,7 @@
     "file": "services/google-ads.html",
     "type": "service",
     "title": "Google Ads for Clinics with Real Booking Tracking",
-    "description": "Google Ads for physio, chiro, dental and other clinics, measured on booked appointments rather than clicks. Managed from Ireland by a 10+ year specialist.",
+    "description": "Google Ads for physio, chiro, dental and other clinics, measured on booked appointments. Managed from Ireland by a specialist with 10+ years in Google Ads.",
     "crumbs": [["Services", "/services/"]],
     "crumbName": "Google Ads",
     "service": { "name": "Google Ads management for clinics", "serviceType": "Pay-per-click advertising management" }
@@ -50,7 +50,7 @@
     "file": "services/booking-tracking.html",
     "type": "service",
     "title": "Booking Tracking for Clinics: Cliniko, Jane and More",
-    "description": "Tie your marketing to real bookings in Cliniko, Jane and other clinic software, so you see which channels fill the diary, not just which ones get clicks.",
+    "description": "Tie your marketing to real bookings in Cliniko, Jane and other clinic software, so you can see which channels fill the diary.",
     "crumbs": [["Services", "/services/"]],
     "crumbName": "Booking tracking",
     "service": { "name": "Clinic booking and conversion tracking", "serviceType": "Marketing analytics and conversion tracking" }
