@@ -25,7 +25,7 @@ const resultsHtml = results.length === 0 ? '' : `<section class="section section
 </section>`;
 
 const ORG_ID = `${SITE_URL}/#organization`;
-const FONTS = 'https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap';
+const FONTS = 'https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap';
 
 const thumbs = {};
 for (const f of await fs.readdir('src/partials/thumbs')) thumbs[f.replace('.svg', '')] = (await fs.readFile(path.join('src/partials/thumbs', f), 'utf8')).trim();
