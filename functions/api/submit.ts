@@ -15,7 +15,7 @@ interface Env {
 
 /** Only these fields are accepted, so the form cannot be used to post anything else. */
 const ALLOWED = new Set([
-  'form-name', 'name', 'clinic', 'email', 'phone', 'website', 'clinic_type', 'message',
+  'form-name', 'name', 'clinic', 'email', 'phone', 'website', 'clinic_type', 'problem', 'message',
 ]);
 
 const FORMS = new Set(['clinic-check', 'contact']);

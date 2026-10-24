@@ -85,8 +85,13 @@ for (const p of pages) {
   // Forms post to the function and carry the honeypot and required fields.
   for (const [f] of h.matchAll(/<form[\s\S]*?<\/form>/g)) {
     forms++;
-    for (const field of ['name', 'clinic', 'email', 'phone', 'website', 'clinic_type', 'message', 'company-website', 'form-name'])
+    // The fields the function requires must be present...
+    for (const field of ['name', 'clinic', 'email', 'company-website', 'form-name'])
       if (!f.includes(`name="${field}"`)) add(p.path, `form missing field ${field}`);
+    // ...and every other field must be one the function accepts, or it is silently dropped.
+    const allowed = new Set(['form-name', 'company-website', 'name', 'clinic', 'email', 'phone', 'website', 'clinic_type', 'problem', 'message']);
+    for (const [, n] of f.matchAll(/\sname="([^"]+)"/g))
+      if (!allowed.has(n)) add(p.path, `form field not accepted by /api/submit: ${n}`);
     if (!f.includes('action="/api/submit"')) add(p.path, 'form does not post to /api/submit');
   }
   if (/\{\{[^}]+\}\}/.test(h)) add(p.path, 'unreplaced template token');

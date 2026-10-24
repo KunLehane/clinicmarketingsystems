@@ -1,32 +1,77 @@
-<section class="hero">
-  <div class="container hero-grid">
+<section class="hero-dark">
+  <div class="container hero-layout">
     <div>
-      <p class="eyebrow">Marketing systems for clinics in Ireland</p>
-      <h1>More booked appointments, and proof of where they came from.</h1>
-      <p class="lead">We build and run the website, Google Business Profile, Google Ads and booking tracking for your clinic, and report every booking back to the channel that produced it.</p>
+      <div class="hero-badge">
+        <svg width="34" height="34" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="6" fill="#a9c7d9"/><path d="M13 8h6v5h5v6h-5v5h-6v-5H8v-6h5z" fill="none" stroke="#1e202d" stroke-width="2" stroke-linejoin="round"/></svg>
+        <div><strong>10+ years</strong><span>Google Ads and SEO in Ireland</span></div>
+      </div>
+      <h1>More booked appointments for your clinic</h1>
+      <p class="lead">We build and run the website, Google Business Profile, Google Ads and booking tracking for clinics, and report every booking back to the channel that produced it.</p>
+      <ul class="hero-ticks">
+        <li>Websites built around Cliniko, Jane and the booking software you already use</li>
+        <li>Found on Google Maps for the treatments you want more of</li>
+        <li>Monthly reports in booked appointments, not clicks</li>
+      </ul>
       <div class="btn-row">
-        <a class="btn btn-primary" href="/clinic-check/">Get your free clinic website check</a>
-        <a class="link-arrow" href="{{BOOK_CALL_URL}}">Book a call</a>
+        <a class="link-arrow" href="{{BOOK_CALL_URL}}">Rather talk? Book a call</a>
       </div>
     </div>
-    <figure class="report">
-      <div class="report-head"><span>Bookings by source</span><span>Example month</span></div>
-      <table>
-        <thead>
-          <tr><th scope="col">Source</th><th scope="col">Enquiries</th><th scope="col">Booked</th><th scope="col">Cost per booking</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Google Business Profile</td><td>40</td><td>20</td><td>n/a</td></tr>
-          <tr><td>Google Ads</td><td>30</td><td>15</td><td>&euro;40</td></tr>
-          <tr><td>Website organic</td><td>20</td><td>10</td><td>n/a</td></tr>
-          <tr><td>Referral</td><td>10</td><td>5</td><td>n/a</td></tr>
-        </tbody>
-        <tfoot>
-          <tr><td>Total</td><td>100</td><td>50</td><td></td></tr>
-        </tfoot>
-      </table>
-      <figcaption>Example report layout. Figures are illustrative.</figcaption>
-    </figure>
+    <div class="check-card" id="check">
+      <h2>Free clinic website check</h2>
+      <p>Tell us what is not working. We check your site the way a new patient sees it and send back a plain-English list of what to fix first.</p>
+      <form class="lead-form" method="post" action="/api/submit" data-lead-form>
+        <input type="hidden" name="form-name" value="clinic-check">
+        <div class="hp" aria-hidden="true">
+          <label for="hero-hp">Leave this field empty</label>
+          <input id="hero-hp" type="text" name="company-website" tabindex="-1" autocomplete="off">
+        </div>
+        <div class="field">
+          <label for="hero-problem">What is not working right now?</label>
+          <select id="hero-problem" name="problem">
+            <option value="">Choose one</option>
+            <option>Not enough new patients</option>
+            <option>Not showing on Google Maps</option>
+            <option>Google Ads cost too much for what they bring in</option>
+            <option>Website is slow, dated or hard to book from</option>
+            <option>Cannot tell where bookings come from</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="hero-name">Your name <span class="req" aria-hidden="true">*</span></label>
+            <input id="hero-name" type="text" name="name" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="hero-clinic">Clinic name <span class="req" aria-hidden="true">*</span></label>
+            <input id="hero-clinic" type="text" name="clinic" autocomplete="organization" required>
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="hero-email">Email <span class="req" aria-hidden="true">*</span></label>
+            <input id="hero-email" type="email" name="email" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="hero-website">Clinic website</label>
+            <input id="hero-website" type="text" name="website" inputmode="url" placeholder="yourclinic.ie" autocomplete="url">
+          </div>
+        </div>
+        <button class="btn btn-primary btn-block" type="submit">Get my free check</button>
+        <p class="form-note">Free, no obligation. We use these details only to reply to you. See our <a href="/privacy/">privacy notice</a>.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="stat-strip" aria-label="At a glance">
+  <div class="container">
+    <ul>
+      <li><strong>10+ years</strong><span>in Google Ads and SEO</span></li>
+      <li><strong>Clinics only</strong><span>physio, dental, rehab and more</span></li>
+      <li><strong>Cliniko and Jane</strong><span>booking tracking set up</span></li>
+      <li><strong>Based in Ireland</strong><span>one person accountable</span></li>
+    </ul>
   </div>
 </section>
 
@@ -43,6 +88,40 @@
     </div>
   </div>
 </section>
+
+<section class="section section-white" id="physio-rooms-cork">
+  <div class="container case">
+    <figure class="phone" style="margin:0"><img src="/img/physio-rooms-cork-mobile.webp" alt="Physio Rooms Cork website on a phone, showing the booking and WhatsApp buttons above the fold" width="600" height="1216" loading="lazy" decoding="async"></figure>
+    <div>
+      <span class="case-tag">Recent build</span>
+      <h2>Physio Rooms Cork</h2>
+      <p class="muted">A three-clinic physiotherapy practice in Douglas, Ballinlough and Carrigaline. We built the site around how patients actually decide: what hurts, which clinic is nearest, and whether other patients rate it.</p>
+      <ul class="check-list">
+        <li>Treatment and body-area pages, each ending in an enquiry card that asks where it hurts</li>
+        <li>Patient reviews on every key page, not hidden on one testimonials page</li>
+        <li>Booking and WhatsApp one tap away on a phone</li>
+        <li>Insurer logos and clinic locations shown where patients make the decision</li>
+        <li>A corporate physiotherapy page for employers</li>
+      </ul>
+      <div class="btn-row" style="margin-top:0">
+        <a class="btn btn-primary" href="#check">Get the same check for your clinic</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section founder">
+  <div class="container founder-inner">
+    <h2>A word from Aidan</h2>
+    <div>
+      <!-- DRAFT FOR AIDAN TO APPROVE: rewrite in your own words before launch. -->
+      <blockquote><p>I have run Google Ads and SEO for Irish businesses for over ten years, including dentists, addiction treatment centres and physio clinics. The same problem comes up every time. The clinic is good, the diary is not full, and nobody can say which marketing produced which booking. Clinic Marketing Systems is how I fix that: one system, one person accountable, measured in booked appointments.</p></blockquote>
+      <div class="founder-who"><span class="founder-mark" aria-hidden="true">AL</span><div><strong>Aidan Lehane</strong><span>Founder, Clinic Marketing Systems</span></div></div>
+    </div>
+  </div>
+</section>
+
+{{RESULTS}}
 
 <section class="section section-white">
   <div class="container">
@@ -94,6 +173,24 @@
     <div>
       <h2>How we start with a new clinic</h2>
       <p class="muted">It is hard to judge a website or an ad budget when nobody can see which bookings it produces. So we check the tracking first, and judge everything after that on booked appointments.</p>
+      <figure class="report">
+        <div class="report-head"><span>Bookings by source</span><span>Example month</span></div>
+        <table>
+          <thead>
+            <tr><th scope="col">Source</th><th scope="col">Enquiries</th><th scope="col">Booked</th><th scope="col">Cost per booking</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Google Business Profile</td><td>40</td><td>20</td><td>n/a</td></tr>
+            <tr><td>Google Ads</td><td>30</td><td>15</td><td>&euro;40</td></tr>
+            <tr><td>Website organic</td><td>20</td><td>10</td><td>n/a</td></tr>
+            <tr><td>Referral</td><td>10</td><td>5</td><td>n/a</td></tr>
+          </tbody>
+          <tfoot>
+            <tr><td>Total</td><td>100</td><td>50</td><td></td></tr>
+          </tfoot>
+        </table>
+        <figcaption>Example report layout. Figures are illustrative.</figcaption>
+      </figure>
     </div>
     <ol class="steps">
       <li><div><strong>Check</strong><span>We review your website, booking flow, Business Profile, ads and tracking.</span></div></li>
@@ -134,7 +231,7 @@
       Do not add testimonials until they are supplied by the client.
     -->
     <div class="rows">
-      <div><h3>Physiotherapy clinic, Cork</h3><p>Three-location website with Cliniko booking tracking.</p></div>
+      <div><h3><a href="#physio-rooms-cork">Physio Rooms Cork</a></h3><p>Three-clinic physiotherapy website with treatment pages, reviews and enquiry cards.</p></div>
       <div><h3>Google Ads and local SEO, Ireland</h3><p>Over 10 years of Google Ads and local SEO work for Irish businesses, now focused on clinics.</p></div>
       <div><h3>Chiropractic, dental and addiction treatment</h3><p>Websites, local search and paid search for clinics across Ireland.</p></div>
     </div>

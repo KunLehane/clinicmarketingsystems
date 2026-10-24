@@ -9,10 +9,23 @@ const header = await fs.readFile('src/partials/header.html', 'utf8');
 const footer = await fs.readFile('src/partials/footer.html', 'utf8');
 const formTpl = await fs.readFile('src/partials/form.html', 'utf8');
 const ctaBand = await fs.readFile('src/partials/cta.html', 'utf8');
-
 const esc = s => String(s).replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
+// Client results wall. Renders nothing until src/results.json has real, approved entries.
+const results = JSON.parse(await fs.readFile('src/results.json', 'utf8'));
+const resultsHtml = results.length === 0 ? '' : `<section class="section section-alt results-wall" aria-labelledby="results-heading">
+  <div class="container">
+    <div class="section-head"><h2 id="results-heading">Clinic results</h2><p>Real clinics, real numbers, shared with their permission.</p></div>
+    <ul class="results-grid">${results.map(r => `
+      <li class="result-card"><p class="result-type">${esc(r.type)}${r.place ? ` · ${esc(r.place)}` : ''}</p>
+        <p class="result-figure">${esc(r.figure)}</p>
+        <p class="result-label">${esc(r.label)}</p>
+        <p class="result-work">${esc(r.work)}</p>${r.client ? `<p class="result-client">${esc(r.client)}</p>` : ''}</li>`).join('')}
+    </ul>
+  </div>
+</section>`;
+
 const ORG_ID = `${SITE_URL}/#organization`;
-const FONTS = 'https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;500;600&display=swap';
+const FONTS = 'https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap';
 
 const thumbs = {};
 for (const f of await fs.readdir('src/partials/thumbs')) thumbs[f.replace('.svg', '')] = (await fs.readFile(path.join('src/partials/thumbs', f), 'utf8')).trim();
@@ -21,6 +34,7 @@ const tokens = html => html
   .replace(/\{\{thumb:([a-z-]+)\}\}/g, (_, name) => thumbs[name] ?? `{{missing-thumb-${name}}}`)
   .replace(/\{\{form:([a-z-]+)\}\}/g, (_, name) => formTpl.replaceAll('{{FORM_NAME}}', name))
   .replaceAll('{{CTA}}', ctaBand)
+  .replaceAll('{{RESULTS}}', resultsHtml)
   .replaceAll('{{CONTACT_EMAIL}}', CONTACT_EMAIL)
   .replaceAll('{{BOOK_CALL_URL}}', BOOK_CALL_URL)
   .replaceAll('{{YEAR}}', String(new Date().getFullYear()));
@@ -103,7 +117,7 @@ ${robots}<meta property="og:type" content="${p.article ? 'article' : 'website'}"
 <meta property="og:title" content="${esc(p.title)}">
 <meta property="og:description" content="${esc(p.description)}">
 <meta property="og:url" content="${url}">
-<meta name="theme-color" content="#0b5d4b">
+<meta name="theme-color" content="#1e202d">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
