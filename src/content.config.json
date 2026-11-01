@@ -1,0 +1,15 @@
+{
+  "site": "https://clinicmarketingsystems.com",
+  "brand": "Clinic Marketing Systems",
+  "shell": null,
+  "blogIndex": "/resources/",
+  "blogIndexLabel": "Resources",
+  "blogIndexReplace": "seo-posts",
+  "accent": "#176a64",
+  "cta": {
+    "heading": "Review your clinic website",
+    "body": "Find practical improvements to your website and booking journey.",
+    "href": "/clinic-check/",
+    "text": "Get your free clinic check"
+  }
+}

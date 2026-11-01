@@ -1,9 +1,11 @@
 // Checks the built site and the source tree. Exits 1 on any issue.
 import fs from 'node:fs/promises';
+import { withContent } from './content.mjs';
 import path from 'node:path';
 import { SITE_URL } from './src/config.mjs';
 
-const pages = JSON.parse(await fs.readFile('src/pages.json', 'utf8'));
+const pages = await withContent(JSON.parse(await fs.readFile('src/pages.json', 'utf8')));
+for (const p of pages.filter(p => p.generated)) { delete p.article; delete p.service; }
 const issues = [];
 const add = (where, msg) => issues.push(`${where}: ${msg}`);
 const DASHES = new RegExp("[\\u2012-\\u2015]");

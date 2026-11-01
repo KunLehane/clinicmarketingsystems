@@ -1,10 +1,18 @@
 // Zero-dependency static build. Wraps each page body in the shared layout,
 // adds JSON-LD, writes dist/, sitemap.xml and robots.txt.
 import fs from 'node:fs/promises';
+import { withContent } from './content.mjs';
 import path from 'node:path';
 import { SITE_URL, SITE_NAME, CONTACT_EMAIL, BOOK_CALL_URL, ARTICLE_DATE } from './src/config.mjs';
 
-const pages = JSON.parse(await fs.readFile('src/pages.json', 'utf8'));
+const pages = await withContent(JSON.parse(await fs.readFile('src/pages.json', 'utf8')));
+for (const p of pages.filter(p => p.generated)) {
+  p.type = p.kind;
+  p.crumbs = p.kind === 'post' ? [['Resources', '/resources/']] : [];
+  // Generated posts carry their own BlogPosting schema.
+  delete p.article;
+  delete p.service;
+}
 const header = await fs.readFile('src/partials/header.html', 'utf8');
 const footer = await fs.readFile('src/partials/footer.html', 'utf8');
 const formTpl = await fs.readFile('src/partials/form.html', 'utf8');
@@ -99,7 +107,7 @@ await fs.mkdir('dist', { recursive: true });
 await fs.cp('public', 'dist', { recursive: true });
 
 for (const p of pages) {
-  const body = tokens(await fs.readFile(path.join('src/pages', p.file), 'utf8'));
+  const body = tokens(p.html ?? await fs.readFile(path.join('src/pages', p.file), 'utf8'));
   const url = SITE_URL + p.path;
   const ld = schemaFor(p).map(o => `<script type="application/ld+json">${JSON.stringify(o).replaceAll('<', '\\u003c')}</script>`).join('');
   const robots = p.noindex ? '<meta name="robots" content="noindex">' : '';
@@ -112,7 +120,7 @@ for (const p of pages) {
 <title>${esc(p.title)}</title>
 <meta name="description" content="${esc(p.description)}">
 <link rel="canonical" href="${url}">
-${robots}<meta property="og:type" content="${p.article ? 'article' : 'website'}">
+${robots}<meta property="og:type" content="${p.article || p.kind === 'post' ? 'article' : 'website'}">
 <meta property="og:site_name" content="${SITE_NAME}">
 <meta property="og:title" content="${esc(p.title)}">
 <meta property="og:description" content="${esc(p.description)}">
