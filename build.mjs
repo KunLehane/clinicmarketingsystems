@@ -117,6 +117,7 @@ for (const p of pages) {
 <meta charset="utf-8">
 <script>document.documentElement.classList.remove("no-js")</script>
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="google-site-verification" content="cbwiQ5L5VLkjB9OAM7LbGOG5WcFcIRJJwr8U75RWU8E">
 <title>${esc(p.title)}</title>
 <meta name="description" content="${esc(p.description)}">
 <link rel="canonical" href="${url}">
