@@ -551,3 +551,17 @@ strong { font-weight: 600; }
 .cx-card-date{font-size:13px!important;color:#7a7f84!important;margin:0 0 6px!important}
 .cx-more{font-weight:600;color:var(--cx-accent,#222);text-decoration:none}
 @media (max-width:600px){.cx-main{padding:32px 16px 56px}.cx-article{font-size:16px}.cx-cta{padding:20px}}
+
+/* Case study stat panel (navy card standing in for a screenshot) */
+.case-panel { margin: 0; background: var(--navy); color: #c9d3db; border-radius: 12px; padding: 32px 28px; display: grid; gap: 22px; box-shadow: 0 40px 70px -35px rgba(30, 32, 45, .6); }
+.case-panel-name { font: 500 .74rem/1 var(--mono); text-transform: uppercase; letter-spacing: .08em; color: var(--sky); }
+.case-panel dl { margin: 0; display: grid; gap: 18px; }
+.case-panel dl div { border-top: 1px solid rgba(255, 255, 255, .12); padding-top: 16px; }
+.case-panel dt { font: 500 clamp(1.7rem, 4vw, 2.2rem)/1.1 var(--mono); color: #fff; }
+.case-panel dd { margin: 6px 0 0; font-size: .95rem; }
+.case-cards { display: grid; gap: 18px; }
+@media (min-width: 820px) { .case-cards { grid-template-columns: repeat(3, 1fr); } }
+.case-card { border: 1px solid var(--line); border-top: 4px solid var(--primary); border-radius: 8px; padding: 24px; display: grid; gap: 10px; align-content: start; background: var(--bg); }
+.case-card h3 { margin: 0; }
+.case-card p { margin: 0; color: var(--muted); }
+.case-card .result-figure { margin: 6px 0 0; }
