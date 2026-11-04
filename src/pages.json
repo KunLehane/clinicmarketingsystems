@@ -124,6 +124,15 @@
     "crumbName": "Case studies"
   },
   {
+    "path": "/case-studies/physio-rooms-cork/",
+    "file": "case-studies/physio-rooms-cork.html",
+    "type": "page",
+    "title": "Physio Rooms Cork Website Case Study | CMS",
+    "description": "From a conversation in Douglas to a live clinic website: the Physio Rooms Cork build, with treatment pages, three locations and clear routes to book.",
+    "crumbs": [["Case studies", "/case-studies/"]],
+    "crumbName": "Physio Rooms Cork"
+  },
+  {
     "path": "/case-studies/neuro-pain-clinic/",
     "file": "case-studies/neuro-pain-clinic.html",
     "type": "page",
@@ -142,7 +151,7 @@
     "file": "case-studies/magic-hands-jimmy.html",
     "type": "page",
     "title": "Magic Hands Jimmy Case Study | Clinic Marketing Systems",
-    "description": "How a Cork manual therapy practice turned 100 million TikTok views into 20% more booked appointments with a website and Google Maps work.",
+    "description": "How a Dublin 15 manual therapy practice turned 100 million TikTok views into 20% more booked appointments with a website and Google Maps work.",
     "crumbs": [
       [
         "Case studies",
