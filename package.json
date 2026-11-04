@@ -5,6 +5,7 @@
   "scripts": {
     "build": "node build.mjs",
     "verify": "node verify.mjs",
-    "check": "node build.mjs && node verify.mjs"
+    "test": "node --test tests/*.test.mjs",
+    "check": "node build.mjs && node verify.mjs && npm test"
   }
 }
